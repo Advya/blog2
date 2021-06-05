@@ -15,17 +15,43 @@
 
   <body>
     <div class="container">
-      <br />
-      <% if user_signed_in? %>
-        Hello, <%= current_user.username %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-      <% else%>
-        <%= link_to 'Log In', new_user_session_path%> 
-      <% end %>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href=<%= home_index_url %>>My Blog</a>
+       
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href=<%= home_index_url %>>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= articles_url %>>Articles</a>
+            </li>
+            <li class="nav-item">            
+              <a class="nav-link btn btn-outline-primary" href=<%= new_article_url %>>New Article</a>
+            </li>            
+          </ul>
+          <div class="nav-item d-flex">
+            <% if user_signed_in? %>
+                    <p>Hello, <%= current_user.username %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+            <% else%>
+              <%= link_to 'Log In', new_user_session_path%> 
+            <% end %>
+          </div>
+          
+        </div>
+      </div>
+    </nav>
+
+      <br />     
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
-      <%= yield %>     
+      <%= yield %>   
+
+
     </div> <!-- /.container -->
   </body>
 </html>
