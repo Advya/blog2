@@ -1,6 +1,6 @@
 FactoryBot.define do
     factory :article do
-      title { "Article title" }
+      title { "sefddddddddddddddddddddddddddddddetertertyrwtytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytytyy" }
       text { "Article text" }
         # создаем фабрику статьи с комментариями
       factory :article_with_comments do
