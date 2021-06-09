@@ -1,6 +1,6 @@
-require "rails_helper"
+# require "rails_helper"
 
-describe Comment do
-    it { should belong_to :article }    
-    it { should validate_length_of :body}
-end
+# describe Comment do
+#     it { should belong_to :article }    
+#     it { should validate_length_of :body}
+# end
